@@ -1,4 +1,3 @@
-//@ts-nocheck
 import Providers from "@/lib/Providers";
 import type { Metadata } from "next";
 import { Session } from "next-auth";

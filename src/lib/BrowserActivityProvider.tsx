@@ -8,6 +8,8 @@ import { ReactNode, useEffect } from "react";
 const BrowserActivityProvider = ({ children }: { children: ReactNode }) => {
   const { data: session, status } = useSession();
 
+  console.log(session);
+
   useEffect(() => {
     if (session?.accessToken) {
       setToCookie(accessToken_key, session?.accessToken);

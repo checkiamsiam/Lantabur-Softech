@@ -1,10 +1,11 @@
 "use client";
 import Form from "@/components/form/Form";
+import FormInput from "@/components/form/FormInput";
 import loginValidation from "@/schema/login.schema";
 import { signIn } from "@/service/auth/signIn";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Card, Input, message } from "antd";
+import { Button, Card, message } from "antd";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -15,6 +16,7 @@ const LoginForm = () => {
   const [error, setError] = useState<boolean>(false);
   const submitHandler = async (data: any) => {
     message.loading("Login.....");
+    console.log(data);
     try {
       const res = await signIn({
         email: data.email,
@@ -52,10 +54,10 @@ const LoginForm = () => {
             <Form submitHandler={submitHandler} resolver={zodResolver(loginValidation)}>
               <div className="flex flex-col gap-4">
                 <div>
-                  <Input name="email" required placeholder="Email" size="large" />
+                  <FormInput name="email" required label="Email" size="large" />
                 </div>
                 <div>
-                  <Input name="password" required placeholder="password" size="large" />
+                  <FormInput name="password" required type="password" label="Password" size="large" />
                 </div>
 
                 {error && (

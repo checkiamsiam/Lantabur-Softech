@@ -20,6 +20,7 @@ const providers: Provider[] = [
     authorize: async (credentials: any) => {
       try {
         const { email, password } = credentials;
+        
 
         if (!email || !password) {
           throw new Error("please enter email or password");

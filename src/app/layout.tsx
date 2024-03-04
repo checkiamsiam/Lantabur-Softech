@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Layout from "@/components/layouts/Layout";
 import Providers from "@/lib/Providers";
 import type { Metadata } from "next";

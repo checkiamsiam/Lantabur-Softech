@@ -2,7 +2,6 @@ import Layout from "@/components/layouts/Layout";
 import Providers from "@/lib/Providers";
 import type { Metadata } from "next";
 import { Session } from "next-auth";
-import { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,7 +9,13 @@ export const metadata: Metadata = {
   description: "Task",
 };
 
-export default function RootLayout({ children, session }: { children: ReactNode; session: Session }) {
+const RootLayout = ({
+  children,
+  session,
+}: Readonly<{
+  children: React.ReactNode;
+  session: Session;
+}>) => {
   return (
     <html lang="en">
       <body>
@@ -20,4 +25,6 @@ export default function RootLayout({ children, session }: { children: ReactNode;
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

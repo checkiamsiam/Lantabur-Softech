@@ -1,5 +1,4 @@
 //@ts-nocheck
-import Layout from "@/components/layouts/Layout";
 import Providers from "@/lib/Providers";
 import type { Metadata } from "next";
 import { Session } from "next-auth";
@@ -20,9 +19,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body>
-        <Providers session={session}>
-          <Layout>{children}</Layout>
-        </Providers>
+        <Providers session={session}>{children}</Providers>
       </body>
     </html>
   );

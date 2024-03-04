@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.ga-container {
+  max-width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.flex-wrap-half {
+  flex: 1;
+  width: 50%;
+}
+
+@media (min-width: 576px) {
+  .ga-container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .ga-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ga-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ga-container {
+    max-width: 1140px;
+  }
+}

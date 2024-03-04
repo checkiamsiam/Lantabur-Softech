@@ -8,9 +8,6 @@ const withPWA = require("next-pwa")({
 });
 
 const nextConfig = withPWA({
-  images: {
-    domains: ["res.cloudinary.com"],
-  },
   output: 'standalone'
 });
 
